@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>海特洛市自然资源局</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:"Microsoft Yahei",sans-serif;background:#f5f7fa;color:#333;}
+.top-bar{background:#004494;color:#fff;font-size:14px;padding:0 20px;}
+.top-inner{max-width:1200px;margin:0 auto;height:36px;line-height:36px;display:flex;justify-content:center;}
+.header{background:#fff;border-bottom:2px #004494 solid;}
+.head-inner{max-width:1200px;margin:0 auto;padding:15px 20px;display:flex;align-items:center;justify-content:space-between;}
+.logo{display:flex;align-items:center;gap:15px;}
+.site-logo{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    object-fit:cover;
+}
+.logo-text h1{font-size:22px;color:#004494;}
+.logo-text p{font-size:13px;color:#666;}
+
+.nav{background:#004494;}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;position:relative;}
+.nav-item{position:relative;padding:0 16px;height:48px;line-height:48px;color:#fff;cursor:pointer;font-size:15px;white-space:nowrap;}
+.nav-item:hover{background:#003377;}
+.nav-sub{position:absolute;top:48px;left:0;width:200px;background:#fff;box-shadow:0 2px 8px #0002;z-index:99;display:none;}
+.nav-sub a{display:block;height:40px;line-height:40px;padding:0 15px;color:#333;text-decoration:none;border-bottom:1px #eee solid;}
+.nav-sub a:hover{background:#f0f5fc;color:#004494;}
+.nav-item:hover .nav-sub{display:block;}
+
+.banner{max-width:1200px;margin:10px auto;height:220px;background:#cce0f5;display:flex;align-items:center;justify-content:center;color:#004494;font-size:26px;font-weight:bold;}
+
+.container{max-width:1200px;margin:20px auto;display:grid;grid-template-columns:70% 28%;gap:2%;padding:0 20px;}
+.box{background:#fff;padding:20px;border-radius:4px;box-shadow:0 1px 3px #0001;margin-bottom:20px;}
+.box-title{font-size:16px;border-left:4px #004494 solid;padding-left:10px;margin-bottom:15px;color:#222;}
+.list-item{line-height:2.2;border-bottom:1px #f2f2f2 solid;display:flex;justify-content:space-between;}
+.list-item a{color:#333;text-decoration:none;}
+.list-item a:hover{color:#004494;}
+.date{color:#999;font-size:13px;}
+
+.article h2{text-align:center;margin:20px 0;font-size:22px;}
+.article-info{text-align:center;color:#888;font-size:14px;margin-bottom:25px;}
+.article p{line-height:2;text-indent:2em;margin-bottom:15px;}
+
+.quick-module{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin:20px 0;}
+.quick-item{background:#004494;color:#fff;text-align:center;padding:18px 10px;border-radius:6px;cursor:pointer;transition:0.3s;}
+.quick-item:hover{background:#003377;}
+
+.footer{background:#004494;color:#fff;padding:35px 0;margin-top:40px;font-size:14px;line-height:1.8;}
+.footer-wrap{max-width:1200px;margin:0 auto;padding:0 20px;text-align:center;}
+.footer-line{margin:10px 0;opacity:0.9;}
+.tip-text{margin-top:15px;padding-top:15px;border-top:1px solid rgba(255,255,255,0.3);font-size:13px;opacity:0.95;}
+.link-box{margin:15px 0;}
+.link-item{display:inline-block;margin:0 10px;color:#fff;text-decoration:none;}
+.link-item:hover{text-decoration:underline;}
+
+@media(max-width:768px){
+.container{grid-template-columns:100%;}
+.nav-inner{flex-wrap:wrap;}
+.nav-item{padding:0 10px;font-size:14px;}
+.banner{height:140px;font-size:18px;}
+.quick-module{grid-template-columns:repeat(2,1fr);}
+}
+
+.page{display:none;}
+.page.active{display:block;}
+</style>
+</head>
+<body>
+<!-- 顶部栏 -->
+<div class="top-bar">
+  <div class="top-inner">
+    <div>欢迎访问海特洛市自然资源局官方网站</div>
+  </div>
+</div>
+
+<!-- 头部LOGO区域 -->
+<div class="header">
+  <div class="head-inner">
+    <div class="logo">
+      <!-- 在此处替换logo地址 src填入图片链接/本地图片名 -->
+      <img class="site-logo" src="C:\Users\36245\Desktop\新建文件夹 (2)\logo.png" alt="局标识">
+      <div class="logo-text">
+        <h1>海特洛市自然资源局</h1>
+        <p>NATURAL RESOURCES BUREAU OF HAITELO CITY</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 导航栏 -->
+<div class="nav">
+  <div class="nav-inner">
+    <div class="nav-item" onclick="goPage('index')">首页</div>
+
+    <div class="nav-item">
+      政务公开
+      <div class="nav-sub">
+        <a href="javascript:;" onclick="goPage('zwgk1')">机构职能</a>
+        <a href="javascript:;" onclick="goPage('zwgk2')">领导信息</a>
+        <a href="javascript:;" onclick="goPage('zwgk3')">政策法规</a>
+        <a href="javascript:;" onclick="goPage('zwgk4')">财政信息</a>
+        <a href="javascript:;" onclick="goPage('zwgk5')">人事信息</a>
+        <a href="javascript:;" onclick="goPage('zwgk6')">规划计划</a>
+        <a href="javascript:;" onclick="goPage('zwgk7')">权责清单</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      业务核心板块
+      <div class="nav-sub">
+        <a href="javascript:;" onclick="goPage('ghList')">国土空间规划</a>
+        <a href="javascript:;" onclick="goPage('td1')">土地资源管理</a>
+        <a href="javascript:;" onclick="goPage('kc1')">矿产地质管理</a>
+        <a href="javascript:;" onclick="goPage('bdc1')">不动产登记</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      公示公告
+      <div class="nav-sub">
+        <a href="javascript:;" onclick="goPage('gonggaolist')">公告查询</a>
+        <a href="javascript:;" onclick="goPage('gonggao1')">公示详情内容</a>
+        <a href="javascript:;" onclick="goPage('dongtailist')">本局动态</a>
+        <a href="javascript:;" onclick="goPage('dongtai1')">动态详情内容</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      互动交流
+      <div class="nav-sub">
+        <a href="javascript:;" onclick="goPage('hd1')">咨询留言</a>
+        <a href="javascript:;" onclick="goPage('hd2')">投诉举报</a>
+        <a href="javascript:;" onclick="goPage('hd3')">意见征集</a>
+        <a href="javascript:;" onclick="goPage('hd4')">答复公示</a>
+        <a href="javascript:;" onclick="goPage('hd5')">常见问题答疑</a>
+      </div>
+    </div>
+
+    <div class="nav-item" onclick="goPage('about')">关于我们</div>
+  </div>
+</div>
+
+<!-- 首页 -->
+<div id="index" class="page active">
+  <div class="banner">统筹全域资源 守护城市生态 助力家园发展</div>
+  <div style="max-width:1200px;margin:0 auto;padding:0 20px;">
+    <div class="quick-module">
+      <div class="quick-item" onclick="goPage('ghList')">规划成果查询</div>
+      <div class="quick-item" onclick="goPage('bdc5')">不动产登记</div>
+      <div class="quick-item" onclick="goPage('td2')">用地报批</div>
+      <div class="quick-item" onclick="goPage('kc2')">矿产业务办理</div>
+      <div class="quick-item" onclick="goPage('gonggaolist')">公告查询</div>
+      <div class="quick-item" onclick="goPage('hd1')">咨询留言</div>
+      <div class="quick-item" onclick="goPage('dongtailist')">本局动态</div>
+      <div class="quick-item" onclick="goPage('gonggao1')">公示公告</div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="main">
+      <div class="box">
+        <div class="box-title">本局动态</div>
+        <div class="list-item"><a href="javascript:goPage('dongtai1')">自然资源常态化巡查工作有序开展</a><span class="date">2026-05-22</span></div>
+        <div class="list-item"><a href="javascript:goPage('dongtai1')">空间规划优化调整工作稳步推进</a><span class="date">2026-05-20</span></div>
+      </div>
+      <div class="box">
+        <div class="box-title">公示公告</div>
+        <div class="list-item"><a href="javascript:goPage('gonggao1')">年度土地供应出让计划公示</a><span class="date">2026-05-21</span></div>
+        <div class="list-item"><a href="javascript:goPage('gonggao1')">不动产业务办理规范更新通知</a><span class="date">2026-05-19</span></div>
+      </div>
+    </div>
+    <div class="side">
+      <div class="box">
+        <div class="box-title">网站简介</div>
+        <p style="line-height:2;">本站整合全部业务栏目，首页快捷入口可直达常用业务，导航菜单涵盖政务公开、各类业务板块与互动服务，页面统一规范，所有板块均可点击访问。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 国土空间规划列表专题页 -->
+<div id="ghList" class="page">
+  <div class="container">
+    <div class="main">
+      <div class="box">
+        <div class="box-title">国土空间规划文件列表</div>
+        <div class="list-item">
+          <a href="javascript:goPage('ghDetail')">海特洛市人民政府关于《海特洛市国土空间总体规划（2021—2035年）》的批复</a>
+          <span class="date">2026-05-21</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 规划批复详情页面 -->
+<div id="ghDetail" class="page">
+  <div class="container">
+    <div class="main">
+      <div class="box article">
+        <h2>海特洛市人民政府关于《海特洛市国土空间总体规划（2021—2035年）》的批复</h2>
+        <div class="article-info">海函〔2026〕01号　｜　发布日期：2026-05-21</div>
+
+        <p style="text-align:center; font-weight:bold;">海特洛市人民政府、自然资源部：</p>
+
+        <p>你局关于报请批准《海特洛市国土空间总体规划（2021—2035年）》的请示收悉。现批复如下：</p>
+
+        <p style="font-weight:bold;">一、原则同意规划</p>
+        <p>原则同意自然资源部审查通过的《海特洛市国土空间总体规划（2021—2035年）》（以下简称《规划》）。《规划》是海特洛市空间发展的指南、可持续发展的空间蓝图，是各类开发保护建设活动的基本依据，请认真组织实施。</p>
+        <p>海特洛市是我国单列核心主城、滨海科创都市，是全国性综合交通枢纽、区域金融科技中心和国际滨海旅游目的地。</p>
+
+        <p style="font-weight:bold;">二、筑牢安全发展空间基础</p>
+        <p>到2035年：</p>
+        <p>
+        - 耕地保有量和永久基本农田保护面积不低于10万公顷；<br>
+        - 生态保护红线面积不低于30平方公里，筑牢“山海连城、蓝绿交织”生态安全格局；<br>
+        - 城镇开发边界面积控制在70平方公里以内，集约高效利用城镇空间；<br>
+        - 严控新增建设用地规模，优化用地结构，提升土地节约集约利用水平。
+        </p>
+
+        <p style="font-weight:bold;">三、优化国土空间开发保护格局</p>
+        <p>
+        - 生态空间：强化滨海湿地、河网水系、山地丘陵保护，构建“一湾两带、多廊多点”生态安全格局，加强“异向”特殊空间管控，维护生态系统稳定性。<br>
+        - 农业空间：严守耕地红线，稳定粮食生产，发展都市现代农业、特色渔业，保障农产品供给安全。<br>
+        - 城镇空间：构建“一主三副、双核引领”都市格局，做强新赫兰德金融科创核、老城区人文宜居核，联动滨海度假区、桥间地、未闻浦协同发展，优化城市功能布局，提升城市能级和品质。
+        </p>
+
+        <p style="font-weight:bold;">四、推动城乡融合与高质量发展</p>
+        <p>
+        - 统筹城乡基础设施和公共服务设施建设，促进城乡要素双向流动，缩小城乡差距。<br>
+        - 聚焦金融科技、先进制造、现代服务、滨海旅游等主导产业，推动产业集群发展，提升产业核心竞争力。<br>
+        - 传承海特洛滨海文化、市井文化，保护历史街区、特色风貌，塑造“现代都市+赛博朋克+东方市井”城市特色。
+        </p>
+
+        <p style="font-weight:bold;">五、健全规划实施保障机制</p>
+        <p>
+        - 严格执行《规划》，任何部门和个人不得随意修改、违规变更，维护规划严肃性和权威性。<br>
+        - 建立规划实施监测、评估、预警机制，定期开展规划体检，五年一评估，及时解决实施中的问题。<br>
+        - 强化规划刚性约束，将《规划》作为国土空间开发保护、审批建设项目、编制各类专项规划的法定依据。<br>
+        - 加强组织领导，落实工作责任，健全协同机制，确保《规划》确定的各项目标任务落地见效。
+        </p>
+
+        <p style="text-align:right; margin-top:30px;">海特洛市人民政府、自然资源部<br>2026年5月21日</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 其余原有页面保留 -->
+<!-- 关于我们 -->
+<div id="about" class="page">
+  <div class="container">
+    <div class="main">
+      <div class="box article">
+        <h2>关于我们</h2>
+        <div class="article-info">更新时间：2026-05-22</div>
+        <p>海特洛市自然资源局是负责辖区国土空间规划、土地管理、矿产资源、不动产登记、生态保护修复、自然资源执法监管等综合管理工作的职能机构。</p>
+        <p>本局始终秉持科学规划、严格保护、集约利用、服务民生的工作理念，统筹区域各类自然资源开发与保护工作，完善政务服务体系，畅通群众沟通渠道，全力保障区域经济社会平稳可持续发展。</p>
+        <p>本官方网站作为对外政务展示、信息公开、业务查询、民意互动的线上平台，及时发布各类政务信息、工作动态、政策公告，为广大市民、企业提供便捷高效的线上服务。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 友情链接页面 -->
+<div id="friendlink" class="page">
+  <div class="container">
+    <div class="main">
+      <div class="box article">
+        <h2>友情链接</h2>
+        <div class="article-info">合作伙伴网站入口</div>
+        <div style="text-align:center;margin-top:30px;">
+          <a class="link-item" href="javascript:void(0)">市级政务门户网</a>
+          <a class="link-item" href="javascript:void(0)">自然资源政务平台</a>
+          <a class="link-item" href="javascript:void(0)">不动产登记服务中心</a>
+          <a class="link-item" href="javascript:void(0)">生态环境管理平台</a>
+          <a class="link-item" href="javascript:void(0)">国土规划信息网</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 本局动态列表 -->
+<div id="dongtailist" class="page">
+  <div class="container">
+    <div class="main">
+      <div class="box">
+        <div class="box-title">本局动态列表</div>
+        <div class="list-item"><a href="javascript:goPage('dongtai1')">自然资源常态化巡查工作有序开展</a><span class="date">2026-05-22</span></div>
+        <div class="list-item"><a href="javascript:goPage('dongtai1')">空间规划优化调整工作稳步推进</a><span class="date">2026-05-20</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 公示公告列表 -->
+<div id="gonggaolist" class="page">
+  <div class="container">
+    <div class="main">
+      <div class="box">
+        <div class="box-title">公示公告列表</div>
+        <div class="list-item"><a href="javascript:goPage('gonggao1')">年度土地供应出让计划公示</a><span class="date">2026-05-21</span></div>
+        <div class="list-item"><a href="javascript:goPage('gonggao1')">不动产业务办理规范更新通知</a><span class="date">2026-05-19</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 动态详情 -->
+<div id="dongtai1" class="page">
+  <div class="container">
+    <div class="main">
+      <div class="box article">
+        <h2>自然资源常态化巡查工作有序开展</h2>
+        <div class="article-info">发布时间：2026-05-22 来源：局办公室</div>
+        <p>为维护辖区自然资源利用秩序，严守资源保护底线，本局组织工作人员开展全域常态化巡查作业。巡查范围覆盖辖区全域土地、矿山、生态保护区域，重点排查违法占地、违规开采、私自改变用地性质等违规行为。</p>
+        <p>巡查过程中采用实地核查、资料比对相结合的方式，对排查发现的问题建立台账，分类制定整改要求，督促相关主体按期完成整改。同时强化日常监管力度，从源头减少违规问题发生。</p>
+        <p>后续将持续保持巡查力度，健全长效监管机制，保障各类自然资源得到科学合理开发与保护。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 公告详情 -->
+<div id="gonggao1" class="page">
+  <div class="container">
+    <div class="main">
+      <div class="box article">
+        <h2>年度土地供应出让计划公示</h2>
+        <div class="article-info">发布时间：2026-05-21 来源：土地管理科室</div>
+        <p>依据土地管理相关法律法规，结合区域城市建设、产业发展、民生配套建设实际需求，本局编制完成本年度国有土地使用权出让计划，现面向社会进行公示。</p>
+        <p>本次供地统筹兼顾住宅、商业、工业以及公共配套用地需求，严格遵循节约集约用地原则，优化土地资源配置结构。出让流程全程公开透明，接受社会各界监督。</p>
+        <p>公示期间公众可通过网站互动渠道反馈意见建议，公示结束后依照既定流程推进土地出让相关工作。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 政务公开子页面 -->
+<div id="zwgk1" class="page"><div class="container"><div class="main"><div class="box article"><h2>机构职能</h2><div class="article-info">更新时间：2026-05-22</div><p>本局承担辖区内自然资源统一管理职责，统筹国土空间规划、土地矿产资源管控、不动产确权登记、生态修复治理、执法监督等工作，贯彻落实各项资源管理法律法规，保障区域资源有序利用。</p></div></div></div></div>
+<div id="zwgk2" class="page"><div class="container"><div class="main"><div class="box article"><h2>领导信息</h2><div class="article-info">更新时间：2026-05-22</div><p>班子成员分工负责各项业务板块，统筹协调资源保护、项目审批、政务服务等工作，秉持依法行政原则，推动自然资源管理各项工作落地实施。</p></div></div></div></div>
+<div id="zwgk3" class="page"><div class="container"><div class="main"><div class="box article"><h2>政策法规</h2><div class="article-info">更新时间：2026-05-22</div><p>汇总展示土地、矿产、规划、不动产登记等领域现行法规文件，动态更新政策条目，为办事群众与企业提供合规参考依据。</p></div></div></div></div>
+<div id="zwgk4" class="page"><div class="container"><div class="main"><div class="box article"><h2>财政信息</h2><div class="article-info">更新时间：2026-05-22</div><p>依规公开部门预算决算、经费使用、采购项目等财政相关内容，主动接受社会监督，规范资金使用管理。</p></div></div></div></div>
+<div id="zwgk5" class="page"><div class="container"><div class="main"><div class="box article"><h2>人事信息</h2><div class="article-info">更新时间：2026-05-22</div><p>公示干部任免、人员招录、考核评优等人事相关事项，保障人事工作公开公正开展。</p></div></div></div></div>
+<div id="zwgk6" class="page"><div class="container"><div class="main"><div class="box article"><h2>规划计划</h2><div class="article-info">更新时间：2026-05-22</div><p>发布年度工作安排、中长期发展规划、专项工作方案，明确各阶段工作目标与推进举措。</p></div></div></div></div>
+<div id="zwgk7" class="page"><div class="container"><div class="main"><div class="box article"><h2>权责清单</h2><div class="article-info">更新时间：2026-05-22</div><p>梳理公示行政许可、处罚、核查等职权事项，明确办事依据与责任范围，规范权力运行流程。</p></div></div></div></div>
+
+<!-- 国土空间规划原有子页面 -->
+<div id="gh2" class="page"><div class="container"><div class="main"><div class="box article"><h2>片区控规详情</h2><div class="article-info">2026-05-22</div><p>细化片区用地指标、建筑管控、配套设施布局，精准约束区域建设开发行为。</p></div></div></div></div>
+<div id="gh3" class="page"><div class="container"><div class="main"><div class="box article"><h2>规划编制成果</h2><div class="article-info">2026-05-22</div><p>收纳各级规划编制文本、图纸、批复文件，实现规划成果统一查阅管理。</p></div></div></div></div>
+<div id="gh4" class="page"><div class="container"><div class="main"><div class="box article"><h2>规划审批公示</h2><div class="article-info">2026-05-22</div><p>项目规划审批事项按期公示，保障公众知情权，规范审批办事流程。</p></div></div></div></div>
+<div id="gh5" class="page"><div class="container"><div class="main"><div class="box article"><h2>规划修改备案</h2><div class="article-info">2026-05-22</div><p>因公共利益调整规划的事项，严格履行论证、公示、备案流程，维护规划法定效力。</p></div></div></div></div>
+
+<!-- 土地资源管理 -->
+<div id="td1" class="page"><div class="container"><div class="main"><div class="box article"><h2>土地征收征用</h2><div class="article-info">2026-05-22</div><p>依法开展土地征收工作，落实补偿安置政策，保障群众合法权益，支撑重点项目落地建设。</p></div></div></div></div>
+<div id="td2" class="page"><div class="container"><div class="main"><div class="box article"><h2>建设用地审批</h2><div class="article-info">2026-05-22</div><p>严格审核建设用地申请，把控用地规模与用途，落实耕地平衡相关管控要求。</p></div></div></div></div>
+<div id="td3" class="page"><div class="container"><div class="main"><div class="box article"><h2>土地出让交易</h2><div class="article-info">2026-05-22</div><p>土地出让采用公开交易模式，全程信息公示，实现资源市场化规范配置。</p></div></div></div></div>
+<div id="td4" class="page"><div class="container"><div class="main"><div class="box article"><h2>耕地保护管控</h2><div class="article-info">2026-05-22</div><p>坚守耕地保护红线，整治违规改变耕地用途行为，稳定耕地保有规模。</p></div></div></div></div>
+<div id="td5" class="page"><div class="container"><div class="main"><div class="box article"><h2>土地巡查监管</h2><div class="article-info">2026-05-22</div><p>网格化巡查土地使用情况，及时处置违规用地问题，规范土地利用秩序。</p></div></div></div></div>
+
+<!-- 矿产地质管理 -->
+<div id="kc1" class="page"><div class="container"><div class="main"><div class="box article"><h2>矿业权出让</h2><div class="article-info">2026-05-22</div><p>依规公开出让探矿权、采矿权，保障矿产资源开发交易公平公正。</p></div></div></div></div>
+<div id="kc2" class="page"><div class="container"><div class="main"><div class="box article"><h2>矿山审批备案</h2><div class="article-info">2026-05-22</div><p>办理矿山开办、变更、注销审批手续，把控矿山开采准入标准。</p></div></div></div></div>
+<div id="kc3" class="page"><div class="container"><div class="main"><div class="box article"><h2>地质灾害防治</h2><div class="article-info">2026-05-22</div><p>排查地质灾害隐患，搭建预警体系，落实防灾避险举措，守护群众安全。</p></div></div></div></div>
+<div id="kc4" class="page"><div class="container"><div class="main"><div class="box article"><h2>矿产资源核查</h2><div class="article-info">2026-05-22</div><p>核查矿产储量与开采情况，查处违规采矿行为，规范资源开采秩序。</p></div></div></div></div>
+<div id="kc5" class="page"><div class="container"><div class="main"><div class="box article"><h2>矿山生态修复</h2><div class="article-info">2026-05-22</div><p>推进破损矿区生态治理，打造绿色矿山，恢复区域自然生态环境。</p></div></div></div></div>
+
+<!-- 不动产登记 -->
+<div id="bdc1" class="page"><div class="container"><div class="main"><div class="box article"><h2>首次登记</h2><div class="article-info">2026-05-22</div><p>办理不动产初次确权登记，确立不动产权属基础信息。</p></div></div></div></div>
+<div id="bdc2" class="page"><div class="container"><div class="main"><div class="box article"><h2>转移登记</h2><div class="article-info">2026-05-22</div><p>处理买卖、赠与、继承等权属变更登记业务，保障交易权属合法有效。</p></div></div></div></div>
+<div id="bdc3" class="page"><div class="container"><div class="main"><div class="box article"><h2>变更注销登记</h2><div class="article-info">2026-05-22</div><p>根据信息变动、不动产灭失情况，办理登记信息变更与注销业务。</p></div></div></div></div>
+<div id="bdc4" class="page"><div class="container"><div class="main"><div class="box article"><h2>抵押查封登记</h2><div class="article-info">2026-05-22</div><p>办理不动产抵押相关登记，配合司法机关完成查封解封登记业务。</p></div></div></div></div>
+<div id="bdc5" class="page"><div class="container"><div class="main"><div class="box article"><h2>办事流程指南</h2><div class="article-info">2026-05-22</div><p>公示各项登记业务材料要求、办理步骤、收费标准，便捷群众办事。</p></div></div></div></div>
+<div id="bdc6" class="page"><div class="container"><div class="main"><div class="box article"><h2>登记结果查询</h2><div class="article-info">2026-05-22</div><p>提供业务办理进度与登记结果查询服务，业务办理状态可实时查看。</p></div></div></div></div>
+
+<!-- 互动交流 -->
+<div id="hd1" class="page"><div class="container"><div class="main"><div class="box article"><h2>咨询留言</h2><div class="article-info">2026-05-22</div><p>接纳群众业务相关咨询问题，工作人员按规定时限进行答复回应。</p></div></div></div></div>
+<div id="hd2" class="page"><div class="container"><div class="main"><div class="box article"><h2>投诉举报</h2><div class="article-info">2026-05-22</div><p>受理违规行为、服务问题相关举报线索，依规核查处置并反馈结果。</p></div></div></div></div>
+<div id="hd3" class="page"><div class="container"><div class="main"><div class="box article"><h2>意见征集</h2><div class="article-info">2026-05-22</div><p>针对政策方案、服务优化事项征集公众意见，吸纳合理建议完善工作。</p></div></div></div></div>
+<div id="hd4" class="page"><div class="container"><div class="main"><div class="box article"><h2>答复公示</h2><div class="article-info">2026-05-22</div><p>共性咨询、举报事项办理结果统一公示，提升政务办理透明度。</p></div></div></div></div>
+<div id="hd5" class="page"><div class="container"><div class="main"><div class="box article"><h2>常见问题答疑</h2><div class="article-info">2026-05-22</div><p>汇总高频咨询问题并统一解答，方便群众快速了解业务相关知识。</p></div></div></div></div>
+
+<!-- 底部 -->
+<div class="footer">
+    <div class="footer-wrap">
+        <p>海特洛市自然资源局 版权所有</p>
+        <p class="footer-line">地址：海特洛市行政新区政务大楼 | 邮政编码：518000</p>
+        <p class="footer-line">办公电话：000-12345678 | 电子邮箱：htl_zrzyj@163.com</p>
+        <p class="footer-line">网站标识码：440305000123456 | 备案号：海ICP备98765432号</p>
+        <div class="link-box">
+            <span>友情链接：</span>
+            <a class="link-item" href="javascript:void(0)">市级政务门户网</a>
+            <a class="link-item" href="javascript:void(0)">自然资源政务平台</a>
+            <a class="link-item" href="javascript:void(0)">不动产登记服务中心</a>
+        </div>
+        <p class="tip-text">温馨提示：本站所有内容均为网络娱乐创意创作，纯属虚拟模拟，切勿当真，与现实任何政府机构、部门、单位无任何关联。</p>
+    </div>
+</div>
+
+<script>
+// 页面切换逻辑
+function goPage(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0,0);
+}
+</script>
+</body>
+</html>
